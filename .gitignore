@@ -1,0 +1,10 @@
+.env
+
+# detector
+*.pyc
+detector/.tmp/*
+!detector/.tmp/.gitkeep
+detector/yolov3.weights
+
+# viewer
+viewer/vendor/

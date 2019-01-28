@@ -1,0 +1,6 @@
+flask==1.0.2
+python-dotenv==0.8.2
+gunicorn==19.8.1
+opencv-python==4.0.0.21
+numpy==1.16.0
+cloudinary==1.15.0
