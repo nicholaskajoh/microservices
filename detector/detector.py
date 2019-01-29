@@ -6,6 +6,7 @@ import numpy as np
 import cloudinary
 from cloudinary.uploader import upload
 from collections import Counter
+import urllib.request
 
 
 # load env vars
@@ -33,14 +34,16 @@ def handle_bad_request(ex):
 
 
 # detect objects, draw bounding boxes, save new image and return image url and predictions
-@app.route("/", methods=['POST'])
+@app.route('/', methods=['POST'])
 def index():
     # get image
     data = request.get_json()
     if 'image_url' not in data:
         raise BadRequest('Image url is required!', status=403)
     image_url = data['image_url']
-    image = cv2.imread(image_url)
+    image_response = urllib.request.urlopen(image_url)
+    image_array = np.asarray(bytearray(image_response.read()), dtype='uint8')
+    image = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
 
     # get object classes
     classes = None
