@@ -1,0 +1,7 @@
+{
+    "require": {
+        "cloudinary/cloudinary_php": "^1.13",
+        "vlucas/phpdotenv": "^3.3",
+        "predis/predis": "^1.1"
+    }
+}
