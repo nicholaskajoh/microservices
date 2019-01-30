@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>YOLO Online</title>
+    <title>Yoloo</title>
 </head>
 <body>
-    <h1>YOLO Online</h1>
+    <h1>Yoloo</h1>
 
     <?php if (isset($_GET['input_image']) && $_GET['input_image'] == 0) echo '<em>No image uploaded!</em>'; ?>
     <?php if (isset($_GET['new_output']) && $_GET['new_output'] == 1) echo '<em>Image processed successfully!</em>'; ?>
