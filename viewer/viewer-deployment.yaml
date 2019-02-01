@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: viewer-svc-deployment
+spec:
+  replicas: 2
+  minReadySeconds: 15
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: viewer-svc
+    spec:
+      containers:
+        - image: gcr.io/yolo-online/viewer-svc
+          imagePullPolicy: Always
+          name: viewer-svc
+          ports:
+            - containerPort: 80
+          envFrom:
+            - secretRef:
+                name: viewer-svc-secrets

@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: detector-svc-deployment
+spec:
+  replicas: 3
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: detector-svc
+    spec:
+      containers:
+        - image: gcr.io/yolo-online/detector-svc
+          imagePullPolicy: Always
+          name: detector-svc
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: detector-svc-secrets

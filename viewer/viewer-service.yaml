@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: viewer-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: viewer-svc
