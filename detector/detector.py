@@ -10,8 +10,8 @@ import urllib.request
 
 
 # load env vars
-APP_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-load_dotenv(os.path.join(APP_ROOT, '.env'))
+# APP_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# load_dotenv(os.path.join(APP_ROOT, '.env'))
 # create Flask app
 app = Flask(__name__)
 

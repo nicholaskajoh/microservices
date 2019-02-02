@@ -21,8 +21,8 @@
     <?php
         require_once 'vendor/autoload.php';
 
-        $dotenv = Dotenv\Dotenv::create(__DIR__);
-        $dotenv->load();
+        // $dotenv = Dotenv\Dotenv::create(__DIR__);
+        // $dotenv->load();
 
         \Cloudinary::config(array(
             'cloud_name' => getenv('CLOUDINARY_CLOUD_NAME'), 
